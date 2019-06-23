@@ -11,15 +11,16 @@ import { SignInWithApple } from './SignInWithApple';
 import { ButtonStyle, ButtonType, AuthScope } from './Types';
 
 interface Props {
-  buttonType: ButtonType;
   buttonStyle: ButtonStyle;
+  buttonType: ButtonType;
   scopes: [AuthScope];
+  state?: String;
   style?: StyleProp<ViewStyle>;
 }
 
 export const SignInButton: React.FC<Props> = props => {
   function onPress() {
-    SignInWithApple.authorize(props.scopes);
+    SignInWithApple.authorize(props.scopes, props.state);
   }
 
   return SignInWithApple.constants.isAvailable ? (

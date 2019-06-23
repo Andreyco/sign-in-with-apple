@@ -17,20 +17,16 @@ import { ButtonStyle, ButtonType, AuthScope } from './Types';
 interface Props {}
 
 export const App: React.FC<Props> = () => {
-  const onAttempt = () => {
-    Alert.alert('click');
-  };
-
   const [buttonType, setButtonType] = React.useState(ButtonType.default);
   const [buttonStyle, setButtonStyle] = React.useState(ButtonStyle.black);
 
   return (
     <View style={styles.container}>
       <SignInButton
-        scopes={[AuthScope.email, AuthScope.fullName]}
-        buttonType={buttonType}
         buttonStyle={buttonStyle}
-        onAttempt={onAttempt}
+        buttonType={buttonType}
+        scopes={[AuthScope.email, AuthScope.fullName]}
+        state="state to pass"
       />
       <Text onPress={() => setButtonType(ButtonType.default)}>Default</Text>
       <Text onPress={() => setButtonType(ButtonType.signUp)}>Sign up</Text>

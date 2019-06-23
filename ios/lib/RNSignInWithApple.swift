@@ -11,23 +11,23 @@ import AuthenticationServices
 
 @objc(RNSignInWithApple)
 class RNSignInWithApple: NSObject {
-  
+
   var resolveAuthorizationRequest: RCTPromiseResolveBlock?;
-  
+
   var rejectAuthorizationRequest: RCTPromiseRejectBlock?;
-  
+
   @objc
   static func requiresMainQueueSetup() -> Bool {
     return false;
   }
-  
+
   @objc
   func constantsToExport() -> [String: Any]! {
     var isAvailable = false;
     var authScopes: [String: String] = [:];
     var buttonTypes: [String: Int] = [:];
     var buttonStyles: [String: Int] = [:];
-    
+
     if #available(iOS 13.0, *) {
       authScopes = [
         "fullName": ASAuthorization.Scope.fullName.rawValue,
@@ -45,7 +45,7 @@ class RNSignInWithApple: NSObject {
       ];
       isAvailable = true;
     }
-    
+
     return [
       "isAvailable": isAvailable,
       "authScopes": authScopes,
@@ -53,43 +53,43 @@ class RNSignInWithApple: NSObject {
       "buttonStyles": buttonStyles,
     ];
   }
-  
+
 }
 
 
 @available(iOS 13.0, *)
 extension RNSignInWithApple: ASAuthorizationControllerPresentationContextProviding {
-  
+
   func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
     return RCTKeyWindow()!;
   }
-  
+
 }
 
 @available(iOS 13.0, *)
 extension RNSignInWithApple: ASAuthorizationControllerDelegate {
-  
-  @objc(authorize:resolver:rejecter:)
-  func authorize(scopes: [String], resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+
+  @objc(authorize:state:resolver:rejecter:)
+  func authorize(scopes: [String], state: String?, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
     resolveAuthorizationRequest = resolve;
     rejectAuthorizationRequest = reject;
-    
+
     let request = ASAuthorizationAppleIDProvider().createRequest();
     request.requestedScopes = scopes.map({ rawValue in ASAuthorization.Scope(rawValue) });
-    
+    request.state = state;
+
     let authorizationController = ASAuthorizationController(authorizationRequests: [request]);
     authorizationController.delegate = self;
     authorizationController.presentationContextProvider = self;
     authorizationController.performRequests();
   }
-  
+
   func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
     rejectAuthorizationRequest!("ASAUTHORIZATION_ERROR", error.localizedDescription, error);
-    
   }
-  
+
   func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-    print(authorization);
+    resolveAuthorizationRequest!([credentialToSerializable(authorization.credential)]);
   }
-  
+
 }

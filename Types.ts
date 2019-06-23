@@ -21,3 +21,13 @@ export interface ModuleConstants {
   buttonTypes: typeof ButtonType;
   isAvailable: boolean;
 }
+
+export interface PersonNameComponents {
+  familyName?: String;
+  givenName?: String;
+  middleName?: String;
+  namePrefix?: String;
+  nameSuffix?: String;
+  nickname?: String;
+  phoneticRepresentation?: PersonNameComponents;
+}

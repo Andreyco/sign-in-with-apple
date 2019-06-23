@@ -10,6 +10,9 @@
 
 @interface RCT_EXTERN_MODULE(RNSignInWithApple, NSObject)
 
-RCT_EXTERN_METHOD(authorize:(NSArray)scopes resolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(authorize:(NSArray)scopes
+                  state:(NSString) state
+                  resolver: (RCTPromiseResolveBlock)resolve
+                  rejecter: (RCTPromiseRejectBlock)reject)
 
 @end
