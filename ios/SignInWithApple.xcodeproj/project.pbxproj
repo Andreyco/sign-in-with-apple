@@ -16,6 +16,10 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		43B3DFB884BE794F0CABBEFB /* libPods-SignInWithAppleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3625E0FDA25ACEEF79563C3 /* libPods-SignInWithAppleTests.a */; };
+		771588A422C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771588A322C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift */; };
+		771588A522C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771588A322C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift */; };
+		771588A622C011B1006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771588A322C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift */; };
+		771588A722C011B2006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771588A322C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift */; };
 		77172A9222B6614200D86D52 /* RNSignInWithApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 77172A9122B6614200D86D52 /* RNSignInWithApple.m */; };
 		77172A9322B6614200D86D52 /* RNSignInWithApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 77172A9122B6614200D86D52 /* RNSignInWithApple.m */; };
 		77172A9722B6622600D86D52 /* RNSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77172A9622B6622600D86D52 /* RNSignInWithApple.swift */; };
@@ -77,6 +81,7 @@
 		4606B18D4F91C5191931253A /* Pods-SignInWithApple-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInWithApple-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignInWithApple-tvOS/Pods-SignInWithApple-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5C5C4CAE02EC29D5ED1DB2D4 /* Pods-SignInWithAppleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInWithAppleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignInWithAppleTests/Pods-SignInWithAppleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7593577BF059933658210D1D /* Pods-SignInWithApple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInWithApple.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignInWithApple/Pods-SignInWithApple.debug.xcconfig"; sourceTree = "<group>"; };
+		771588A322C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNSignInWithAppleCredentialsSerializerExtension.swift; sourceTree = "<group>"; };
 		77172A9122B6614200D86D52 /* RNSignInWithApple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNSignInWithApple.m; sourceTree = "<group>"; };
 		77172A9422B6622600D86D52 /* RNSignInWithApple-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNSignInWithApple-Bridging-Header.h"; sourceTree = "<group>"; };
 		77172A9622B6622600D86D52 /* RNSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNSignInWithApple.swift; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 				77172A9422B6622600D86D52 /* RNSignInWithApple-Bridging-Header.h */,
 				77172A9122B6614200D86D52 /* RNSignInWithApple.m */,
 				77172A9622B6622600D86D52 /* RNSignInWithApple.swift */,
+				771588A322C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift */,
 				778F4F3622B9A4E500598E56 /* RNSingInButtonViewManager.m */,
 				778F4EAA22B8151200598E56 /* RNSingInButtonViewManager.swift */,
 			);
@@ -552,6 +558,7 @@
 				77A6A24B22BADA76003345F6 /* AppleIDButtonView.swift in Sources */,
 				778F4E9922B6CDF900598E56 /* RNSignInWithApple.swift in Sources */,
 				778F4E9722B67F5300598E56 /* SignInWithAppleTests.swift in Sources */,
+				771588A622C011B1006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */,
 				77A6A25022BADA9B003345F6 /* AppleIDButtonViewDelegate.swift in Sources */,
 				778F4E9422B67EC700598E56 /* ExampleAppTests.m in Sources */,
 			);
@@ -561,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771588A422C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */,
 				77172A9722B6622600D86D52 /* RNSignInWithApple.swift in Sources */,
 				77A6A24A22BADA76003345F6 /* AppleIDButtonView.swift in Sources */,
 				778F4EAB22B8151200598E56 /* RNSingInButtonViewManager.swift in Sources */,
@@ -576,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771588A522C00DD5006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */,
 				77172A9822B6622600D86D52 /* RNSignInWithApple.swift in Sources */,
 				77A6A24C22BADA76003345F6 /* AppleIDButtonView.swift in Sources */,
 				778F4EAC22B8151200598E56 /* RNSingInButtonViewManager.swift in Sources */,
@@ -594,6 +603,7 @@
 				77A6A24D22BADA76003345F6 /* AppleIDButtonView.swift in Sources */,
 				778F4E9A22B6CDFA00598E56 /* RNSignInWithApple.swift in Sources */,
 				778F4E9822B67F5300598E56 /* SignInWithAppleTests.swift in Sources */,
+				771588A722C011B2006073AD /* RNSignInWithAppleCredentialsSerializerExtension.swift in Sources */,
 				77A6A25222BADA9B003345F6 /* AppleIDButtonViewDelegate.swift in Sources */,
 				778F4E9522B67EC700598E56 /* ExampleAppTests.m in Sources */,
 			);
