@@ -8,7 +8,13 @@ import {
   ViewStyle,
 } from 'react-native';
 import { SignInWithApple } from './SignInWithApple';
-import { ButtonStyle, ButtonType, AuthScope } from './Types';
+import {
+  ButtonStyle,
+  ButtonType,
+  AuthScope,
+  AuthorizationCredentials,
+  AuthorizationError,
+} from './Types';
 
 interface Props {
   buttonStyle: ButtonStyle;
@@ -16,11 +22,21 @@ interface Props {
   scopes: [AuthScope];
   state?: String;
   style?: StyleProp<ViewStyle>;
+  onAuthorizationSuccess: (credentials: AuthorizationCredentials) => void;
+  onAuthorizationError: (error: AuthorizationError) => void;
 }
 
 export const SignInButton: React.FC<Props> = props => {
-  function onPress() {
-    SignInWithApple.authorize(props.scopes, props.state);
+  async function onPress() {
+    try {
+      const [response] = await SignInWithApple.authorize(
+        props.scopes,
+        props.state
+      );
+      props.onAuthorizationSuccess(response);
+    } catch (e) {
+      props.onAuthorizationError(e);
+    }
   }
 
   return SignInWithApple.constants.isAvailable ? (

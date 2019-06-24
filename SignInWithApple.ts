@@ -1,29 +1,16 @@
 import { NativeModules } from 'react-native';
-import { ModuleConstants, AuthScope, PersonNameComponents } from './Types';
+import { ModuleConstants, AuthScope } from './Types';
 
 const RNSignInWithApple = NativeModules.RNSignInWithApple as {
   getConstants: () => ModuleConstants;
-  // TODO add typing
-  authorize: Function;
+  // TODO add response typing
+  authorize(scopes: [AuthScope], state?: String): Promise<any>;
 };
 
 export class SignInWithApple {
   static constants = RNSignInWithApple.getConstants();
 
-  static async authorize(scopes: [AuthScope], state?: String) {
-    try {
-      const [rawResponse] = await RNSignInWithApple.authorize(scopes, state);
-      const response = stripNullPersonNameComponents(rawResponse);
-      console.log(response);
-    } catch (e) {
-      console.log(e);
-    }
+  static authorize(scopes: [AuthScope], state?: String) {
+    return RNSignInWithApple.authorize(scopes, state);
   }
-}
-
-// TODO implement
-function stripNullPersonNameComponents(
-  nameComponents: PersonNameComponents
-): PersonNameComponents {
-  return nameComponents;
 }

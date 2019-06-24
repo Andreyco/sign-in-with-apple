@@ -31,3 +31,21 @@ export interface PersonNameComponents {
   nickname?: String;
   phoneticRepresentation?: PersonNameComponents;
 }
+
+export type UserDetectionStatus = 'unknown' | 'unsopported' | 'likelyReal';
+
+export interface AuthorizationCredentials {
+  user: String;
+  state?: String;
+  authorizedScopes: [AuthScope];
+  authorizationCode?: String;
+  identityToken?: String;
+  email?: String;
+  fullName: PersonNameComponents;
+  realUserStatus: UserDetectionStatus;
+}
+
+export interface AuthorizationError {
+  code: 'ASAUTHORIZATION_ERROR';
+  message: String;
+}
