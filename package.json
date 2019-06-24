@@ -1,23 +1,31 @@
 {
-  "name": "SignInWithApple",
+  "name": "sign-in-with-apple",
   "version": "0.0.1",
-  "private": true,
+  "author": "Andrej Badin <contact@andrejbadin.com>",
+  "description": "Sign in with Apple for React Native and Web",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "license": "MIT",
+  "homepage": "https://github.com/Andreyco/sign-in-with-apple/blob/master/README.md",
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "tsc",
+    "prepare": "npm run build"
   },
-  "dependencies": {
-    "@types/react": "^16.8.22",
-    "@types/react-native": "^0.57.63",
-    "react": "16.8.6",
-    "react-native": "^0.60.0-rc.2"
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.0",
+    "react-native": ">=0.59"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/runtime": "^7.4.5",
     "@react-native-community/eslint-config": "^0.0.5",
     "@types/jest": "^24.0.15",
+    "@types/react": "^16.8.22",
+    "@types/react-native": "^0.57.63",
     "@types/react-test-renderer": "^16.8.2",
     "babel-jest": "^24.8.0",
     "eslint": "^5.16.0",
@@ -28,5 +36,17 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Andreyco/sign-in-with-apple.git"
+  },
+  "files": [
+    "ios",
+    "lib",
+    "ios",
+    "index.js",
+    "index.d.ts",
+    "SignInWithApple.podspec"
+  ]
 }
