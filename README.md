@@ -103,6 +103,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 - **Andrej Badin** - [@Andreyco](https://github.com/andreyco)
 
+Big thanks to [Volodymyr Sichka](https://www.npmjs.com/~volodymyr.sichka) for NPM package name!
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
