@@ -31,8 +31,10 @@
     "eslint": "^5.16.0",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",
+    "prompts": "^2.1.0",
     "react-test-renderer": "16.8.6",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "xcode": "^2.0.0"
   },
   "jest": {
     "preset": "react-native"
@@ -44,9 +46,15 @@
   "files": [
     "ios",
     "lib",
+    "bin",
     "ios",
     "index.js",
     "index.d.ts",
     "SignInWithApple.podspec"
-  ]
+  ],
+  "rnpm": {
+    "commands": {
+      "postlink": "node_modules/sign-in-with-apple/bin/rnpm-postlink.js"
+    }
+  }
 }
