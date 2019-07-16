@@ -27,13 +27,13 @@ A step by step series of examples that tell you how to get a development env run
 First, you need to install NPM package using npm or yarn.
 
 ```sh
-npm install @bymade/sign-in-with-apple --save
+npm install sign-in-with-apple --save
 ```
 
 And with yarn
 
 ```bash
-yarn add @bymade/sign-in-with-apple
+yarn add sign-in-with-apple
 ```
 
 ### 2. Linking native code
