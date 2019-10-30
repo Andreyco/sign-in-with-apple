@@ -19,6 +19,7 @@ import {
 export interface SignInButtonProps {
   buttonStyle: ButtonStyle;
   buttonType: ButtonType;
+  cornerRadius: number;
   scopes: [AuthScope];
   state?: String;
   style?: StyleProp<ViewStyle>;
@@ -43,6 +44,7 @@ export const SignInButton: React.FC<SignInButtonProps> = props => {
     <NativeView
       buttonStyleRawValue={props.buttonStyle}
       buttonTypeRawValue={props.buttonType}
+      cornerRadius={props.cornerRadius}
       onPress={onPress}
       style={[DEFAULT_APPLE_ID_BUTTON_STYLE, props.style]}
     />

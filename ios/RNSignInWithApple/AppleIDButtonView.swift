@@ -28,6 +28,12 @@ class AppleIDButtonView: UIView {
             reinitAuthorizationAppleIDButton();
         }
     }
+
+    @objc var cornerRadius: CGFloat = 0 {
+        didSet {
+            appleIDButton.cornerRadius = cornerRadius;
+        }
+    }
     
     @objc var onPress: RCTBubblingEventBlock?
     
@@ -47,7 +53,9 @@ class AppleIDButtonView: UIView {
     private func initAuthorizationAppleIDButton() -> ASAuthorizationAppleIDButton {
         let buttonType: ButtonType = ButtonType(rawValue: buttonTypeRawValue) ?? ButtonType.default;
         let buttonStyle: ButtonStyle = ButtonStyle(rawValue: buttonStyleRawValue) ?? ButtonStyle.black;
-        return ASAuthorizationAppleIDButton(type: buttonType, style: buttonStyle);
+        let button = ASAuthorizationAppleIDButton(type: buttonType, style: buttonStyle);
+        button.cornerRadius = cornerRadius;
+        return button;
     }
     
     private func disposeAuthoriationAppleIDButton() {

@@ -12,6 +12,7 @@
 
 RCT_EXPORT_VIEW_PROPERTY(buttonTypeRawValue, NSInteger)
 RCT_EXPORT_VIEW_PROPERTY(buttonStyleRawValue, NSInteger)
+RCT_EXPORT_VIEW_PROPERTY(cornerRadius, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(onPress, RCTBubblingEventBlock)
 
 @end
