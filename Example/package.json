@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.0-rc.2",
+    "react-native": "0.62.3",
     "sign-in-with-apple": "andreyco/sign-in-with-apple#e0cdda6a892ade0ebb0d9722b6acc993df06bd64"
   },
   "devDependencies": {
